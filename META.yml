@@ -1,0 +1,17 @@
+name: Perl-Squish
+version: 0.01
+abstract: Reduce Perl code to the smallest number of characters
+author: Adam Kennedy <cpan@ali.as>
+license: perl
+distribution_type: module
+build_requires:
+  Test::More: 0.47
+  File::Spec: 0.82
+requires:
+  perl: 5.005
+  PPI: 0.990
+no_index:
+  directory:
+    - t.data
+    - inc
+generated_by: Module::Install version 0.36

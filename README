@@ -1,0 +1,51 @@
+NAME
+    Perl::Squish - Reduce Perl code to a few characters as possible
+
+DESCRIPTION
+    Perl source code can often be quite large, with copious amounts of
+    comments, inline POD documentation, and inline tests and other padding.
+
+    The actual code can represent as little as 10-20% of the content of
+    well-written modules.
+
+    In situations where the Perl files need to be included, but do not need
+    to be readable, this module will "squish" them. That is, it will strip
+    out as many characters as it can from the source, while leaving the
+    function of the code identical to the original.
+
+METHODS
+  file $filename [, $output ]
+    The "file" method squishes a Perl document by filename. If passed a
+    single parameter, it modifies the file in-place. If provided a second
+    parameter, it will attempt to save the squished file to the alternative
+    filename.
+
+    Returns true on success, or "undef" on error.
+
+  document $Document
+    The "document" method takes a PPI::Document object, and modifies it
+    directly.
+
+    Returns the document object as a convenience, or "undef" on error.
+
+SUPPORT
+    Bugs should always be submitted via the CPAN bug tracker, located at
+
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Perl-Squish>
+
+    For general comments, contact the author.
+
+AUTHOR
+    Adam Kennedy, <http://ali.as/>, cpan@ali.as
+
+SEE ALSO
+    PPI
+
+COPYRIGHT
+    Copyright (c) 2005 Adam Kennedy. All rights reserved. This program is
+    free software; you can redistribute it and/or modify it under the same
+    terms as Perl itself.
+
+    The full text of the license can be found in the LICENSE file included
+    with this module.
+
