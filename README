@@ -14,19 +14,12 @@ DESCRIPTION
     function of the code identical to the original.
 
 METHODS
-  file $filename [, $output ]
-    The "file" method squishes a Perl document by filename. If passed a
-    single parameter, it modifies the file in-place. If provided a second
-    parameter, it will attempt to save the squished file to the alternative
-    filename.
+    "Perl::Squish" is a fully PPI::Transform-compatible class. See that
+    module's documentation for more information.
 
-    Returns true on success, or "undef" on error.
-
-  document $Document
-    The "document" method takes a PPI::Document object, and modifies it
-    directly.
-
-    Returns the document object as a convenience, or "undef" on error.
+TO DO
+    To keep things simple for the talk, I really don't get into some of the
+    more in depth stuff that could make things even smaller.
 
 SUPPORT
     Bugs should always be submitted via the CPAN bug tracker, located at

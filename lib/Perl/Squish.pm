@@ -21,15 +21,18 @@ function of the code identical to the original.
 
 =head1 METHODS
 
+C<Perl::Squish> is a fully L<PPI::Transform>-compatible class. See that
+module's documentation for more information.
+
 =cut
 
 use strict;
 use Params::Util '_INSTANCE';
-use PPI;
+use base 'PPI::Transform';
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.01';
+	$VERSION = '0.02';
 }
 
 
@@ -39,49 +42,8 @@ BEGIN {
 #####################################################################
 # Main Methods
 
-=pod
-
-=head2 file $filename [, $output ]
-
-The C<file> method squishes a Perl document by filename. If passed a single
-parameter, it modifies the file in-place. If provided a second parameter,
-it will attempt to save the squished file to the alternative filename.
-
-Returns true on success, or C<undef> on error.
-
-=cut
-
-sub file {
-	my $squish   = shift;
-
-	# Load the Document
-	my $input    = defined $_[0] ? shift : return undef;
-	my $Document = PPI::Document->new( "$input" ) or return undef;
-
-	# Process
-	$squish->document( $Document ) or return undef;
-
-	# Save the document
-	my $output = @_
-		? defined $_[0] ? "$_[0]" : undef
-		: $input;
-	$output or return undef;
-	$Document->save( $output );
-}
-
-=pod
-
-=head2 document $Document
-
-The C<document> method takes a L<PPI::Document> object, and modifies it
-directly.
-
-Returns the document object as a convenience, or C<undef> on error.
-
-=cut
-
 sub document {
-	my $class    = shift;
+	my $self     = shift;
 	my $Document = _INSTANCE(shift, 'PPI::Document') or return undef;
 
 	# Remove the easy things
@@ -121,6 +83,11 @@ sub document {
 1;
 
 =pod
+
+=head1 TO DO
+
+To keep things simple for the talk, I really don't get into some of the
+more in depth stuff that could make things even smaller.
 
 =head1 SUPPORT
 
