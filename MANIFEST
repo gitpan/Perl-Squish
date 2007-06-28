@@ -1,6 +1,5 @@
 Changes
 inc/Module/Install.pm
-inc/Module/Install/AutoInstall.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
@@ -18,3 +17,4 @@ t.data/sample1.pm
 t.data/sample1.pm.squish
 t/01_compile.t
 t/02_practical.t
+t/99_author.t
