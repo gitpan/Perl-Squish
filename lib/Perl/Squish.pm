@@ -26,13 +26,15 @@ module's documentation for more information.
 
 =cut
 
+use 5.005;
 use strict;
-use Params::Util '_INSTANCE';
-use base 'PPI::Transform';
+use Params::Util   '_INSTANCE';
+use PPI::Transform ();
 
-use vars qw{$VERSION};
+use vars qw{$VERSION @ISA};
 BEGIN {
-	$VERSION = '0.03';
+	$VERSION = '1.04';
+	@ISA     = 'PPI::Transform';
 }
 
 
@@ -99,7 +101,7 @@ For general comments, contact the author.
 
 =head1 AUTHOR
 
-Adam Kennedy, L<http://ali.as/>, cpan@ali.as
+Adam Kennedy <adamk@cpan.org>
 
 =head1 SEE ALSO
 
@@ -107,7 +109,8 @@ L<PPI>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005 Adam Kennedy. All rights reserved.
+Copyright 2005 - 2008 Adam Kennedy.
+
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
 

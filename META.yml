@@ -1,22 +1,25 @@
---- 
-abstract: Reduce Perl code to as few charactes as possible
-author: Adam Kennedy <cpan@ali.as>
-build_requires: 
+---
+abstract: 'Reduce Perl code to a few characters as possible'
+author:
+  - 'Adam Kennedy <adamk@cpan.org>'
+build_requires:
   File::Spec: 0.82
   Test::More: 0.47
 distribution_type: module
-generated_by: Module::Install version 0.67
+generated_by: 'Module::Install version 0.77'
 license: perl
-meta-spec: 
-  url: http://module-build.sourceforge.net/META-spec-v1.3.html
-  version: 1.3
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Perl::Squish
 name: Perl-Squish
-no_index: 
-  directory: 
-    - t.data
+no_index:
+  directory:
     - inc
     - t
-requires: 
-  PPI: 0.992
+requires:
+  PPI: 1.200
   perl: 5.005
-version: 0.03
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.04
